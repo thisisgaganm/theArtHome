@@ -1,0 +1,172 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#211f1b">
+
+  <title>Gallery | The Art Home Interiors</title>
+  <meta name="description" content="Explore the creative vision and completed interiors of The Art Home Interiors through our design and execution galleries.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/responsive-polish.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/design-system.css">
+  <link rel="stylesheet" href="assets/css/gallery.css">
+  <link rel="stylesheet" href="assets/css/final-integration.css">
+  <link rel="stylesheet" href="assets/css/luxury-experience.css">
+</head>
+
+<body class="gallery-page gallery-landing">
+
+  <div class="page-loader">
+    <span>THE ART HOME INTERIORS</span>
+  </div>
+
+  <header class="site-header">
+    <a href="index.html" class="brand" aria-label="The Art Home Interiors home">
+      <img src="assets/images/logo.png" alt="The Art Home Interiors logo">
+    </a>
+
+    <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About Us</a>
+      <a href="gallery.html" class="active" aria-current="page">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <a href="contact.html" class="header-cta">Let's Talk <span>↗</span></a>
+  </header>
+
+  <main>
+    <section class="gallery-landing__hero" aria-labelledby="gallery-hero-title">
+      <img
+        class="gallery-landing__hero-image"
+        src="assets/images/home-hero.jpg"
+        alt=""
+        width="1374"
+        height="768"
+        fetchpriority="high"
+        decoding="async">
+      <div class="gallery-landing__hero-overlay" aria-hidden="true"></div>
+
+      <div class="gallery-landing__hero-content">
+        <span class="gallery-landing__eyebrow">OUR PORTFOLIO</span>
+        <h1 id="gallery-hero-title">Spaces Designed.<br><em>Spaces Transformed.</em></h1>
+        <p>
+          Explore our creative vision and completed interiors, where thoughtful
+          design meets exceptional execution.
+        </p>
+      </div>
+
+      <a class="gallery-landing__scroll" href="#gallery-options" aria-label="Scroll to explore the galleries">
+        <span>SCROLL TO EXPLORE</span>
+        <span aria-hidden="true">↓</span>
+      </a>
+    </section>
+
+    <section class="gallery-landing__intro" aria-labelledby="gallery-intro-title">
+      <div class="gallery-landing__intro-inner">
+        <h2 id="gallery-intro-title" class="reveal-left">More Than Just Interiors.</h2>
+        <p class="reveal-right">
+          Every space begins with an idea. Through thoughtful design and
+          meticulous execution, we create interiors that reflect individuality,
+          comfort and timeless elegance.
+        </p>
+      </div>
+    </section>
+
+    <section
+      class="gallery-landing__options"
+      id="gallery-options"
+      aria-label="Explore our design and execution galleries">
+      <div class="gallery-landing__grid">
+        <a
+          class="gallery-option gallery-option--design luxury-image"
+          href="design-gallery.html"
+          aria-labelledby="design-option-title"
+          aria-describedby="design-option-description">
+          <span class="gallery-option__media">
+            <img
+              src="assets/images/design-preview.jpg"
+              alt="Contemporary living room with a custom timber media wall and blush-toned accents"
+              width="1372"
+              height="874"
+              loading="lazy"
+              decoding="async">
+          </span>
+          <span class="gallery-option__overlay" aria-hidden="true"></span>
+          <div class="gallery-option__content">
+            <div class="gallery-option__copy reveal-left">
+              <span class="gallery-option__eyebrow">01 / DESIGN GALLERY</span>
+              <h2 class="gallery-option__title" id="design-option-title">The Art of Design</h2>
+              <p class="gallery-option__description" id="design-option-description">
+                Discover our creative vision through thoughtfully designed interiors,
+                elegant material palettes, spatial planning and carefully curated details.
+              </p>
+            </div>
+            <span class="gallery-option__action">
+              EXPLORE DESIGN GALLERY <span aria-hidden="true">→</span>
+            </span>
+          </div>
+        </a>
+
+        <a
+          class="gallery-option gallery-option--execution luxury-image"
+          href="execution-gallery.html"
+          aria-labelledby="execution-option-title"
+          aria-describedby="execution-option-description">
+          <span class="gallery-option__media">
+            <img
+              src="assets/images/after-02.jpg"
+              alt="Completed residence with custom woodwork, marble flooring and a blue area rug"
+              width="896"
+              height="1195"
+              loading="lazy"
+              decoding="async">
+          </span>
+          <span class="gallery-option__overlay" aria-hidden="true"></span>
+          <div class="gallery-option__content">
+            <div class="gallery-option__copy reveal-right">
+              <span class="gallery-option__eyebrow">02 / EXECUTION GALLERY</span>
+              <h2 class="gallery-option__title" id="execution-option-title">The Art of Execution</h2>
+              <p class="gallery-option__description" id="execution-option-description">
+                Explore our completed projects and see how our designs transform into
+                beautiful real-world spaces through precision, craftsmanship and attention to detail.
+              </p>
+            </div>
+            <span class="gallery-option__action">
+              EXPLORE EXECUTION GALLERY <span aria-hidden="true">→</span>
+            </span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section class="gallery-landing__cta" aria-labelledby="gallery-cta-title">
+      <div class="gallery-landing__cta-content">
+        <h2 id="gallery-cta-title">Have a Space in Mind?</h2>
+        <p>Let's create something extraordinary together.</p>
+        <a class="gallery-landing__cta-link luxury-button" href="contact.html">
+          START YOUR PROJECT <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="assets/js/responsive-polish.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/site-audit.js"></script>
+  <script src="assets/js/luxury-experience.js"></script>
+</body>
+</html>

@@ -1,0 +1,282 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Get in touch with The Art Home Interiors to discuss your interior design and execution project.">
+  <title>Contact Us | The Art Home Interiors</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/responsive-polish.css">
+  <link rel="stylesheet" href="assets/css/design-system.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/contact.css">
+  <link rel="stylesheet" href="assets/css/final-integration.css">
+  <link rel="stylesheet" href="assets/css/luxury-experience.css">
+</head>
+
+<body class="contact-page">
+
+  <!-- Page Loader -->
+  <div class="page-loader">
+    <div class="loader-content">
+      <span class="loader-brand">THE ART HOME</span>
+      <span class="loader-line"></span>
+      <span class="loader-caption">INTERIORS</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <a href="index.html" class="brand" aria-label="The Art Home Interiors home">
+      <img src="assets/images/logo.png" alt="The Art Home Interiors">
+    </a>
+
+    <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- Hero -->
+    <section class="contact-hero">
+      <div class="contact-hero-image"></div>
+      <div class="contact-hero-overlay"></div>
+
+      <div class="contact-hero-content">
+        <span class="eyebrow">LET'S CREATE SOMETHING BEAUTIFUL</span>
+        <h1>Every beautiful space<br>begins with a <em>conversation.</em></h1>
+        <p class="reveal-left">Tell us about the home you imagine. We'll help you bring it to life.</p>
+        <a href="#contact-details" class="hero-scroll reveal-right luxury-link">
+          <span>SCROLL TO CONNECT</span>
+          <span class="scroll-line"></span>
+        </a>
+      </div>
+
+      <span class="hero-index">01 — LET'S TALK</span>
+    </section>
+
+    <!-- Intro -->
+    <section class="contact-intro section-pad">
+      <div class="contact-intro-label reveal-left">
+        <span class="eyebrow">A PERSONAL APPROACH</span>
+      </div>
+
+      <div class="contact-intro-copy reveal-right">
+        <h2>Good design starts<br>with <em>understanding.</em></h2>
+        <p>
+          Whether you're planning a complete home transformation or looking
+          for thoughtful interior details, we'd love to hear your ideas.
+          Share your vision with us and let's explore what's possible.
+        </p>
+      </div>
+    </section>
+
+    <!-- Contact Form + Details -->
+    <section class="contact-main section-pad" id="contact-details">
+      <div class="contact-form-column reveal-left">
+        <div class="section-heading">
+          <span class="eyebrow">01 / YOUR PROJECT</span>
+          <h2>Tell us what<br>you're <em>imagining.</em></h2>
+          <p>Fill in a few details and our team can get back to you.</p>
+        </div>
+
+        <form id="contactForm" class="contact-form">
+          <div class="form-row">
+            <div class="form-field">
+              <label for="fullName">Your name <span>*</span></label>
+              <input type="text" id="fullName" name="name"
+                     placeholder="Enter your full name" required>
+            </div>
+
+            <div class="form-field">
+              <label for="email">Email address <span>*</span></label>
+              <input type="email" id="email" name="email"
+                     placeholder="you@example.com" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-field">
+              <label for="phone">Phone number <span>*</span></label>
+              <input type="tel" id="phone" name="phone"
+                     placeholder="+91  XXXXX XXXXX" required>
+            </div>
+
+            <div class="form-field">
+              <label for="projectType">What are you looking for?</label>
+              <select id="projectType" name="projectType">
+                <option value="">Select a service</option>
+                <option value="Interior Design">Interior Design</option>
+                <option value="Interior Execution">Interior Execution</option>
+                <option value="Design and Execution">Design & Execution</option>
+                <option value="Consultation">Consultation</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="location">Project location</label>
+            <input type="text" id="location" name="location"
+                   placeholder="City / Area">
+          </div>
+
+          <div class="form-field">
+            <label for="referral">How did you hear about us?</label>
+            <select id="referral" name="referral">
+              <option value="">Choose an option</option>
+              <option value="Instagram">Instagram</option>
+              <option value="Facebook">Facebook</option>
+              <option value="Google Search">Google Search</option>
+              <option value="Friend or Family">Friend / Family</option>
+              <option value="Previous Client">Previous Client</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label for="message">Tell us about your project</label>
+            <textarea id="message" name="message" rows="5"
+                      placeholder="Your ideas, requirements, preferred style, approximate timeline..."></textarea>
+          </div>
+
+          <label class="privacy-note">
+            <input type="checkbox" name="consent" required>
+            <span>I agree to be contacted regarding my enquiry.</span>
+          </label>
+
+          <button type="submit" class="contact-submit">
+            <span>SUBMIT ENQUIRY</span>
+            <span class="submit-arrow">↗</span>
+          </button>
+
+          <p class="form-note">
+            Your details will only be used to respond to your enquiry.
+          </p>
+        </form>
+      </div>
+
+      <!-- Contact Information -->
+      <aside class="contact-info-column reveal-right">
+        <div class="contact-info-top">
+          <span class="eyebrow">02 / CONNECT WITH US</span>
+          <h3>We'd love to<br>hear from <em>you.</em></h3>
+          <p>
+            Have a question or a project in mind? Share the details below and our team can follow up.
+          </p>
+        </div>
+
+        <div class="contact-info-item">
+          <span class="info-number">01</span>
+          <div>
+            <span class="info-label">CALL US</span>
+            <span class="info-value">
+              Phone number needed
+            </span>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <span class="info-number">02</span>
+          <div>
+            <span class="info-label">EMAIL</span>
+            <span class="info-value">
+              Email address needed
+            </span>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <span class="info-number">03</span>
+          <div>
+            <span class="info-label">VISIT US</span>
+            <p class="info-value">Business address needed</p>
+          </div>
+        </div>
+
+        <div class="contact-social">
+          <span class="info-label">FOLLOW OUR JOURNEY</span>
+          <div class="social-links">
+            <span>Instagram</span>
+            <span>Pinterest</span>
+          </div>
+        </div>
+
+        <div class="contact-direct-actions">
+          <span class="direct-action is-disabled" aria-disabled="true">
+            <span class="action-icon">↗</span>
+            <span>Phone number needed</span>
+          </span>
+
+          <span class="direct-action is-disabled whatsapp-action" aria-disabled="true">
+            <span class="action-icon">↗</span>
+            <span>WhatsApp number needed</span>
+          </span>
+        </div>
+      </aside>
+    </section>
+
+    <!-- Image Break -->
+    <section class="contact-image-break reveal-right luxury-image">
+      <img src="assets/images/contact-interior.jpg"
+           alt="Elegant contemporary interior designed with warm natural materials"
+           loading="lazy">
+      <div class="image-break-overlay"></div>
+      <div class="image-break-content">
+        <span class="eyebrow">THOUGHTFULLY DESIGNED. BEAUTIFULLY LIVED.</span>
+        <h2>Your space should<br>feel like <em>you.</em></h2>
+      </div>
+    </section>
+
+    <!-- Map -->
+    <section class="contact-location section-pad reveal">
+      <div class="location-heading reveal-left">
+        <div>
+          <span class="eyebrow">03 / FIND US</span>
+          <h2>Come say <em>hello.</em></h2>
+        </div>
+        <p>We'd be happy to discuss your ideas in person.</p>
+      </div>
+
+      <div class="map-frame map-placeholder reveal-right" role="note">
+        Add the studio address to display a map.
+      </div>
+      <p class="map-caption">MAP LOCATION PENDING BUSINESS ADDRESS</p>
+    </section>
+
+    <!-- Closing CTA -->
+    <section class="contact-closing reveal-left">
+      <div class="closing-content">
+        <span class="eyebrow">THE NEXT CHAPTER STARTS HERE</span>
+        <h2>Let's make room<br>for <em>beautiful living.</em></h2>
+        <a href="#contact-details" class="closing-link luxury-link luxury-button">
+          START A CONVERSATION <span>↗</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Shared footer injection -->
+  <div id="site-footer"></div>
+  <script src="assets/js/responsive-polish.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/contact.js"></script>
+  <script src="assets/js/site-audit.js"></script>
+  <script src="assets/js/luxury-experience.js"></script>
+</body>
+</html>

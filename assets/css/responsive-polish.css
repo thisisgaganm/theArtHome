@@ -1,0 +1,386 @@
+
+/* =====================================================
+   THE ART HOME INTERIORS
+   PART 09 — RESPONSIVE & VISUAL POLISH
+===================================================== */
+
+:root {
+  --polish-ivory: #f5f1eb;
+  --polish-charcoal: #292722;
+  --polish-gold: #b49a78;
+  --polish-transition: cubic-bezier(.22, .61, .36, 1);
+}
+
+/* GLOBAL SAFETY */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img,
+video,
+svg {
+  max-width: 100%;
+}
+
+img {
+  height: auto;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* SELECTION */
+
+::selection {
+  background: var(--polish-gold);
+  color: #fff;
+}
+
+/* SMOOTHER SHARED NAVIGATION */
+
+.site-header {
+  transition:
+    background .4s var(--polish-transition),
+    box-shadow .4s var(--polish-transition),
+    padding .4s var(--polish-transition),
+    backdrop-filter .4s ease;
+}
+
+.site-header.scrolled {
+  background: rgba(245, 241, 235, .88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 8px 35px rgba(35, 30, 22, .06);
+}
+
+.site-header a,
+.site-header button {
+  transition:
+    color .3s ease,
+    opacity .3s ease,
+    transform .3s ease;
+}
+
+.main-nav a {
+  position: relative;
+}
+
+.main-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -7px;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform .4s var(--polish-transition);
+}
+
+.main-nav a:hover::after,
+.main-nav a.active::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* PREMIUM BUTTON FEEDBACK */
+
+.header-cta,
+button,
+.cta-button,
+.primary-button,
+.secondary-button {
+  transition:
+    transform .35s var(--polish-transition),
+    background .35s ease,
+    color .35s ease,
+    border-color .35s ease;
+}
+
+.header-cta:hover,
+.cta-button:hover,
+.primary-button:hover {
+  transform: translateY(-3px);
+}
+
+/* REVEAL ANIMATIONS
+   Uses the existing .reveal and .is-visible classes. */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity .85s var(--polish-transition),
+    transform .85s var(--polish-transition);
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* STAGGERED CHILDREN */
+
+.reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity .7s var(--polish-transition),
+    transform .7s var(--polish-transition);
+}
+
+.reveal-stagger.is-visible > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-stagger.is-visible > *:nth-child(1) { transition-delay: .05s; }
+.reveal-stagger.is-visible > *:nth-child(2) { transition-delay: .12s; }
+.reveal-stagger.is-visible > *:nth-child(3) { transition-delay: .19s; }
+.reveal-stagger.is-visible > *:nth-child(4) { transition-delay: .26s; }
+.reveal-stagger.is-visible > *:nth-child(5) { transition-delay: .33s; }
+.reveal-stagger.is-visible > *:nth-child(6) { transition-delay: .40s; }
+
+/* IMAGE HOVER REFINEMENT */
+
+.project-card img,
+.gallery-card img,
+.service-card img,
+.portfolio-card img,
+.execution-card img {
+  transition:
+    transform 1s var(--polish-transition),
+    filter .6s ease;
+}
+
+.project-card:hover img,
+.gallery-card:hover img,
+.service-card:hover img,
+.portfolio-card:hover img,
+.execution-card:hover img {
+  transform: scale(1.035);
+}
+
+/* IMAGE LOADING BACKGROUND */
+
+img[loading="lazy"] {
+  background: #e7e0d6;
+}
+
+/* SECTION SPACING */
+
+.section-pad {
+  padding-left: clamp(22px, 7vw, 110px);
+  padding-right: clamp(22px, 7vw, 110px);
+}
+
+/* TYPOGRAPHY */
+
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+/* FORM POLISH */
+
+input,
+textarea,
+select {
+  max-width: 100%;
+}
+
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--polish-gold);
+  outline-offset: 4px;
+}
+
+/* MOBILE MENU SAFETY */
+
+@media (max-width: 900px) {
+  .site-header {
+    z-index: 1000;
+  }
+
+  .menu-toggle {
+    position: relative;
+    z-index: 1002;
+    cursor: pointer;
+  }
+
+  .main-nav {
+    overscroll-behavior: contain;
+  }
+
+  .main-nav a {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+/* TABLET */
+
+@media (max-width: 1024px) {
+  .section-pad {
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+
+  .execution-grid,
+  .portfolio-grid {
+    gap: 25px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+  html {
+    scroll-padding-top: 75px;
+  }
+
+  .section-pad {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+
+  h1 {
+    letter-spacing: -1.5px;
+  }
+
+  h2 {
+    letter-spacing: -1px;
+  }
+
+  p {
+    line-height: 1.8;
+  }
+
+  .site-header {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .header-cta {
+    display: none;
+  }
+
+  .reveal {
+    transform: translateY(18px);
+    transition-duration: .65s;
+  }
+
+  .execution-hero,
+  .hero,
+  .page-hero {
+    background-position: center;
+  }
+
+  .execution-grid,
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .execution-image,
+  .portfolio-card img {
+    width: 100%;
+  }
+
+  .execution-section-heading {
+    gap: 15px;
+  }
+
+  .execution-filters {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 10px;
+    scrollbar-width: none;
+  }
+
+  .execution-filters::-webkit-scrollbar {
+    display: none;
+  }
+
+  .filter-btn {
+    flex: 0 0 auto;
+  }
+
+  .comparison-wrap {
+    touch-action: pan-y;
+  }
+}
+
+/* SMALL MOBILE */
+
+@media (max-width: 380px) {
+  .section-pad {
+    padding-left: 17px;
+    padding-right: 17px;
+  }
+
+  .execution-hero h1 {
+    font-size: 56px;
+  }
+
+  .execution-card-info h3 {
+    font-size: 20px;
+  }
+}
+
+/* REDUCED MOTION ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal,
+  .reveal-stagger > * {
+    opacity: 1;
+    transform: none;
+  }
+}

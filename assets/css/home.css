@@ -186,14 +186,14 @@
     animation-delay: .6s;
 }
 
-.hero-line-italic {
+.hero-line-accent {
     padding-left: 9%;
-    font-style: italic;
     color: #d2c1a8;
 }
 
 .hero-heading em {
     font-weight: 400;
+    font-style: normal;
     color: #d2c1a8;
 }
 
@@ -947,7 +947,7 @@
         font-size: clamp(48px,11.5vw,70px);
     }
 
-    .hero-line-italic {
+    .hero-line-accent {
         padding-left: 5%;
     }
 

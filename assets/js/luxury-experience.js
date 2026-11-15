@@ -11,73 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
   ).matches;
 
   /* --------------------------------
-     1. CUSTOM CURSOR
-  -------------------------------- */
-
-  const finePointer = window.matchMedia(
-    "(hover: hover) and (pointer: fine) and (min-width: 901px)"
-  ).matches;
-
-  if (finePointer && !reducedMotion) {
-    const dot = document.createElement("div");
-    const ring = document.createElement("div");
-
-    dot.className = "luxury-cursor-dot";
-    ring.className = "luxury-cursor-ring";
-
-    document.body.append(dot, ring);
-    document.body.classList.add("luxury-cursor-enabled");
-
-    let mouseX = window.innerWidth / 2;
-    let mouseY = window.innerHeight / 2;
-    let ringX = mouseX;
-    let ringY = mouseY;
-
-    document.addEventListener("mousemove", event => {
-      mouseX = event.clientX;
-      mouseY = event.clientY;
-
-      dot.style.left = `${mouseX}px`;
-      dot.style.top = `${mouseY}px`;
-
-      dot.classList.add("is-visible");
-      ring.classList.add("is-visible");
-    });
-
-    const animateRing = () => {
-      ringX += (mouseX - ringX) * 0.16;
-      ringY += (mouseY - ringY) * 0.16;
-
-      ring.style.left = `${ringX}px`;
-      ring.style.top = `${ringY}px`;
-
-      requestAnimationFrame(animateRing);
-    };
-
-    animateRing();
-
-    document.addEventListener("mouseover", event => {
-      const target = event.target.closest(
-        "a, button, input, textarea, select, [role='button']"
-      );
-
-      ring.classList.toggle("is-hovering", Boolean(target));
-    });
-
-    document.addEventListener("mouseleave", () => {
-      dot.classList.remove("is-visible");
-      ring.classList.remove("is-visible");
-    });
-
-    document.addEventListener("mouseenter", () => {
-      dot.classList.add("is-visible");
-      ring.classList.add("is-visible");
-    });
-  }
-
-
-  /* --------------------------------
-     2. PAGE TRANSITIONS
+     1. PAGE TRANSITIONS
   -------------------------------- */
 
   const transition = document.createElement("div");
@@ -167,7 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* --------------------------------
-     3. EXTRA REVEAL ANIMATIONS
+     2. EXTRA REVEAL ANIMATIONS
   -------------------------------- */
 
   const revealElements = document.querySelectorAll(
@@ -198,7 +132,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* --------------------------------
-     4. IMAGE CLASS ENHANCEMENT
+     3. IMAGE CLASS ENHANCEMENT
   -------------------------------- */
 
   document.querySelectorAll(

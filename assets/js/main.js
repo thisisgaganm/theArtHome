@@ -168,7 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                     decoding="async"
                                 >
                             </a>
-                            <p class="footer-description">A space worth entering.</p>
+                            <p class="footer-description">Thoughtful interiors for the way you live.</p>
                             <p class="footer-tagline">Designed with intention.</p>
                         </section>
 
@@ -183,46 +183,19 @@ document.addEventListener('DOMContentLoaded', () => {
                             </ul>
                         </nav>
 
-                        <section class="footer-col" aria-labelledby="footer-services-heading">
-                            <h2 class="footer-heading" id="footer-services-heading">Our services</h2>
-                            <ul class="footer-service-list">
-                                <li>Interior Design</li>
-                                <li>Space Planning</li>
-                                <li>Residential Interiors</li>
-                                <li>Design Execution</li>
-                                <li>Project Management</li>
-                            </ul>
-                        </section>
-
                         <section class="footer-col footer-contact" aria-labelledby="footer-contact-heading">
                             <h2 class="footer-heading" id="footer-contact-heading">Get in touch</h2>
                             <address class="footer-contact-details">
                                 <p>
-                                    <span class="footer-detail-label">Phone</span>
-                                    <span class="footer-placeholder">Phone number to be added</span>
-                                </p>
-                                <p>
                                     <span class="footer-detail-label">Email</span>
                                     <a href="mailto:hello@thearthomeinteriors.com">hello@thearthomeinteriors.com</a>
-                                </p>
-                                <p>
-                                    <span class="footer-detail-label">Studio</span>
-                                    <span class="footer-placeholder">Address to be added</span>
-                                </p>
-                                <p>
-                                    <span class="footer-detail-label">WhatsApp</span>
-                                    <span class="footer-placeholder">Number to be added</span>
-                                </p>
-                                <p>
-                                    <span class="footer-detail-label">Social</span>
-                                    <span class="footer-placeholder">Social profiles to be added</span>
                                 </p>
                             </address>
                         </section>
                     </div>
 
                     <div class="footer-bottom">
-                        <p>© ${new Date().getFullYear()} THE ART HOME INTERIORS. ALL RIGHTS RESERVED.</p>
+                        <p>© ${new Date().getFullYear()} THE ART HOME INTERIORS. All Rights Reserved.</p>
                     </div>
                 </div>
             </footer>

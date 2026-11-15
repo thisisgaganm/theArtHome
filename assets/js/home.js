@@ -2,32 +2,7 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     /* =================================
-       1. SHRINKING HEADER
-    ================================= */
-
-    const header = document.querySelector(".site-header");
-
-    function updateHeader() {
-
-        const currentScroll = window.scrollY;
-
-        if (currentScroll > 70) {
-            header?.classList.add("scrolled");
-        } else {
-            header?.classList.remove("scrolled");
-        }
-
-    }
-
-    window.addEventListener("scroll", updateHeader, {
-        passive: true
-    });
-
-    updateHeader();
-
-
-    /* =================================
-       2. SUBTLE IMAGE PARALLAX
+       1. SUBTLE IMAGE PARALLAX
     ================================= */
 
     const heroImage = document.querySelector(

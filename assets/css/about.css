@@ -40,18 +40,6 @@
   padding: 120px 9%;
 }
 
-/* HEADER */
-
-.about-page .site-header {
-  transition: background .35s ease, box-shadow .35s ease;
-}
-
-.about-page .site-header.scrolled {
-  background: rgba(245, 242, 236, .93);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-}
-
 /* HERO */
 
 .about-hero {

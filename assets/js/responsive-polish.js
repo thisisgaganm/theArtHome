@@ -49,21 +49,6 @@ document.addEventListener("DOMContentLoaded", () => {
   updateProgress();
 
 
-  // ACTIVE NAVIGATION LINK
-  const currentPage = window.location.pathname
-    .split("/")
-    .pop() || "index.html";
-
-  document.querySelectorAll(".main-nav a").forEach(link => {
-    const linkPage = link.getAttribute("href")?.split("#")[0];
-
-    if (linkPage === currentPage) {
-      link.classList.add("active");
-      link.setAttribute("aria-current", "page");
-    }
-  });
-
-
   // PREVENT EMPTY HASH LINKS FROM JUMPING TO TOP
   document.querySelectorAll('a[href="#"]').forEach(link => {
     link.addEventListener("click", event => {

@@ -82,35 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 
-  // 4. MOBILE MENU ACCESSIBILITY
-  const menuToggle = document.querySelector(".menu-toggle");
-  const navigation = document.querySelector(".main-nav");
-
-  if (menuToggle && navigation) {
-    menuToggle.setAttribute("aria-controls", "primary-navigation");
-    navigation.id = "primary-navigation";
-
-    if (!menuToggle.hasAttribute("aria-expanded")) {
-      menuToggle.setAttribute("aria-expanded", "false");
-    }
-
-    const observer = new MutationObserver(() => {
-      const isOpen =
-        navigation.classList.contains("open") ||
-        navigation.classList.contains("active") ||
-        navigation.classList.contains("show");
-
-      menuToggle.setAttribute("aria-expanded", String(isOpen));
-    });
-
-    observer.observe(navigation, {
-      attributes: true,
-      attributeFilter: ["class"]
-    });
-  }
-
-
-  // 5. ADD LAZY LOADING TO NON-HERO IMAGES
+  // 4. ADD LAZY LOADING TO NON-HERO IMAGES
   document.querySelectorAll("img").forEach(img => {
     const isHero = img.closest(
       ".hero, .execution-hero, .page-hero, .home-hero"
@@ -126,7 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 
-  // 6. CURRENT YEAR
+  // 5. CURRENT YEAR
   document.querySelectorAll("[data-current-year]").forEach(element => {
     element.textContent = new Date().getFullYear();
   });

@@ -57,29 +57,6 @@
 }
 
 
-/* HEADER */
-
-.home-page .site-header {
-    transition:
-        height .45s ease,
-        padding .45s ease,
-        background .45s ease,
-        box-shadow .45s ease;
-}
-
-.home-page .site-header.scrolled {
-    height: 78px;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    background: rgba(245,242,236,.96);
-    box-shadow: 0 8px 30px rgba(0,0,0,.06);
-}
-
-.home-page .site-header.scrolled .brand {
-    height: 58px;
-}
-
-
 /* =========================================
    CINEMATIC HERO
 ========================================= */

@@ -42,18 +42,6 @@
   padding: 120px 9%;
 }
 
-/* HEADER */
-
-.services-page .site-header {
-  transition: background .35s ease, box-shadow .35s ease;
-}
-
-.services-page .site-header.scrolled {
-  background: rgba(245, 242, 236, .92);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-}
-
 /* HERO */
 
 .services-hero {

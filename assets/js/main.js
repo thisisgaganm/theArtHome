@@ -1,11 +1,130 @@
 
+const renderSharedHeader = () => {
+    const mount = document.getElementById('site-header');
+
+    if (!mount) return null;
+
+    const currentPage =
+        window.location.pathname.split('/').pop()?.toLowerCase() ||
+        'index.html';
+    const activePage = [
+        'design-gallery.html',
+        'execution-gallery.html'
+    ].includes(currentPage)
+        ? 'gallery.html'
+        : currentPage;
+
+    const links = [
+        { href: 'index.html', label: 'Home' },
+        { href: 'services.html', label: 'Services' },
+        { href: 'about.html', label: 'About Us' },
+        { href: 'gallery.html', label: 'Gallery' },
+        { href: 'contact.html', label: 'Contact' }
+    ].map(({ href, label }) => {
+        const current = href === activePage;
+
+        return `
+            <a href="${href}"${current ? ' class="active" aria-current="page"' : ''}>
+                ${label}
+            </a>
+        `;
+    }).join('');
+
+    mount.innerHTML = `
+        <header class="site-header" aria-label="Site header">
+            <a class="brand" href="index.html" aria-label="The Art Home Interiors home">
+                <img
+                    src="assets/images/logo.png"
+                    alt="The Art Home Interiors"
+                    width="424"
+                    height="589"
+                    fetchpriority="high"
+                >
+            </a>
+
+            <button
+                class="menu-toggle"
+                type="button"
+                aria-label="Open navigation"
+                aria-expanded="false"
+                aria-controls="primary-navigation"
+            >
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="header-menu">
+                <nav class="main-nav" id="primary-navigation" aria-label="Main navigation">
+                    <div class="nav-links">${links}</div>
+                </nav>
+                <a class="header-cta" href="contact.html">
+                    Let's Talk <span aria-hidden="true">↗</span>
+                </a>
+            </div>
+        </header>
+    `;
+
+    const header = mount.querySelector('.site-header');
+    const menuButton = header.querySelector('.menu-toggle');
+    const menu = header.querySelector('.header-menu');
+
+    const setMenuOpen = (open, restoreFocus = false) => {
+        header.classList.toggle('menu-open', open);
+        menu.classList.toggle('open', open);
+        document.body.classList.toggle('nav-open', open);
+        menuButton.setAttribute('aria-expanded', String(open));
+        menuButton.setAttribute(
+            'aria-label',
+            open ? 'Close navigation' : 'Open navigation'
+        );
+
+        if (restoreFocus) menuButton.focus();
+    };
+
+    menuButton.addEventListener('click', () => {
+        setMenuOpen(menuButton.getAttribute('aria-expanded') !== 'true');
+    });
+
+    header.addEventListener('click', event => {
+        if (
+            event.target instanceof Element &&
+            event.target.closest('a[href]')
+        ) {
+            setMenuOpen(false);
+        }
+    });
+
+    document.addEventListener('click', event => {
+        if (
+            header.classList.contains('menu-open') &&
+            !header.contains(event.target)
+        ) {
+            setMenuOpen(false);
+        }
+    });
+
+    document.addEventListener('keydown', event => {
+        if (event.key === 'Escape' && header.classList.contains('menu-open')) {
+            setMenuOpen(false, true);
+        }
+    });
+
+    window.addEventListener('resize', () => {
+        if (window.matchMedia('(min-width: 1025px)').matches) {
+            setMenuOpen(false);
+        }
+    }, { passive: true });
+
+    return header;
+};
+
+const header = renderSharedHeader();
+
 document.addEventListener('DOMContentLoaded', () => {
 
     /* =====================================
        1. SCROLL HEADER EFFECT
     ===================================== */
-
-    const header = document.querySelector('.site-header');
 
     const updateHeader = () => {
         header?.classList.toggle(
@@ -57,41 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     /* =====================================
-       4. MOBILE NAVIGATION
-    ===================================== */
-
-    const toggle = document.querySelector('.menu-toggle');
-    const nav = document.querySelector('.main-nav');
-
-    toggle?.addEventListener('click', () => {
-
-        const open = nav.classList.toggle('open');
-
-        toggle.setAttribute(
-            'aria-expanded',
-            String(open)
-        );
-
-    });
-
-    nav?.querySelectorAll('a').forEach(link => {
-
-        link.addEventListener('click', () => {
-
-            nav.classList.remove('open');
-
-            toggle?.setAttribute(
-                'aria-expanded',
-                'false'
-            );
-
-        });
-
-    });
-
-
-    /* =====================================
-       5. SCROLL REVEAL OBSERVER
+       4. SCROLL REVEAL OBSERVER
     ===================================== */
 
     const revealElements = document.querySelectorAll('.reveal');
@@ -116,7 +201,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     /* =====================================
-       6. AUTOMATIC LOCAL IMAGE LOADING
+       5. AUTOMATIC LOCAL IMAGE LOADING
     ===================================== */
 
     document.querySelectorAll('[data-image]').forEach(el => {
@@ -144,7 +229,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     /* =====================================
-       7. SHARED FOOTER
+       6. SHARED FOOTER
     ===================================== */
 
     const footer = document.getElementById('site-footer');
@@ -206,7 +291,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     /* =====================================
-       8. CONTACT FORM
+       7. CONTACT FORM
     ===================================== */
 
     const form = document.getElementById('contactForm');
